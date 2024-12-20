@@ -3,7 +3,9 @@ import "./Login.css"; // Importamos los estilos
 
 function Login() {
   return (
-    <div className="login-container">
+    <html>
+    <body>
+      <div className="login-container">
       <div className="column">
         <img src="/icons/MIS_LOGO.png" className="img-logo" width="70%" />
         <p>Municipio Inteligente y Sustentable</p>
@@ -45,6 +47,8 @@ function Login() {
         <h5>O continúa con</h5>
       </div>
     </div>
+    </body>
+    </html>
   );
 }
 
