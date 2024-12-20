@@ -1,0 +1,182 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(220, 234, 245);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px; /* Añadido un pequeño padding para evitar que el contenido toque los bordes */
+  }
+  
+
+  .login-container {
+    border-radius: 2.5%;
+    text-align: center;
+    border: 2px solid #000;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de tamaño igual */
+    width: 80%; /* Para limitar el ancho máximo */
+    height: 60%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px; /* Añadido padding para evitar que el contenido toque los bordes */
+  }
+  
+  .login-container .column {
+  display: flex; /* Flexbox para centrar el contenido dentro de las columnas */
+  flex-direction: column;
+  justify-content: center; /* Centrado vertical */
+  align-items: center; /* Centrado horizontal */
+  text-align: center;
+  height: 300px; /* Altura fija para las columnas */
+  padding: 20px; /* Espaciado interior */
+  margin-bottom: 5rem;
+  }
+
+  .img-logo{
+    margin-top: 10rem;
+    width: 300px;
+  }
+  
+  .login-container .column-2 {
+    background-color: rgb(174, 199, 216);
+    border-radius: 2.5%;
+    justify-content: center; /* Centrado horizontal del contenido interno */
+    align-items: center;     /* Centrado vertical del contenido interno */
+    text-align: center;
+    
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-sesion {
+    padding-left: 25%;
+    background-color: #000;
+    padding-right: 25%;
+  }
+  
+  .btn-whatsapp {
+    margin-top: 1rem;
+    background-color: rgb(35, 211, 102);
+  }
+  
+  input::placeholder {
+    color: black;
+  }
+  
+  /* Media queries para hacer el diseño más responsivo */
+  
+  /* Para pantallas pequeñas, como móviles */
+  @media (max-width: 768px) {
+    .login-container {
+      grid-template-columns: 1fr; /* Cambiar a una sola columna */
+      width: 90%; /* Asegura que el contenedor ocupe el 90% del ancho */
+      height: auto; /* Ajusta la altura para contenido variable */
+    }
+  
+    .login-container .column {
+      margin-top: 10%; /* Reduce el margen superior en pantallas pequeñas */
+    }
+  
+    .login-container .column-2 {
+      margin-top: 0; /* Eliminar el margen superior en la segunda columna */
+      padding: 20px; /* Añadir padding para evitar que el contenido toque los bordes */
+    }
+  
+    h2 {
+      font-size: 1.5rem; /* Reduce el tamaño del texto en pantallas pequeñas */
+    }
+  
+    .form-group {
+      margin-bottom: 10px; /* Reduce el margen de los inputs */
+    }
+  
+    input[type="text"],
+    input[type="password"] {
+      width: 100%; /* Hace que los inputs ocupen el 100% del contenedor */
+    }
+  
+    button {
+      width: 100%; /* Los botones deben ocupar el 100% del contenedor */
+    }
+  
+    .btn-sesion {
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+  
+    .btn-whatsapp {
+      width: 100%; /* El botón de WhatsApp ocupa el 100% del contenedor */
+      padding: 10px 0; /* Ajusta el padding */
+    }
+  }
+  
+  /* Para pantallas muy pequeñas, como teléfonos en modo retrato */
+  @media (max-width: 480px) {
+    .login-container {
+      width: 100%; /* Ocupa todo el ancho de la pantalla */
+      padding: 10px; /* Ajusta el padding */
+    }
+  
+    .login-container .column {
+      margin-top: 5%; /* Reduce el margen superior aún más */
+    }
+  
+    h2 {
+      font-size: 1.2rem; /* Reduce aún más el tamaño del texto */
+    }
+  
+    .form-group {
+      margin-bottom: 8px; /* Aumenta ligeramente el margen entre los inputs */
+    }
+  
+    input[type="text"],
+    input[type="password"] {
+      padding: 8px; /* Reduce el padding para ahorrar espacio */
+    }
+  
+    button {
+      padding: 12px; /* Aumenta ligeramente el padding de los botones */
+    }
+  }
+
+  .btn-2{
+
+  }
+  
