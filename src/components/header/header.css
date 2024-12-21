@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+.img-logo-header {
+  width: 50px;
+}
+
+.header {
+  margin-left: 1rem;
+  display: flex; /* Flexbox para alinear los elementos */
+  align-items: center; /* Alineación vertical al centro */
+  position: fixed; /* Fija el header en la parte superior */
+  top: 0; /* Pegado al borde superior */
+  left: 0;
+  width: 93%; /* Ocupa todo el ancho de la pantalla */
+  background-color: #fff; /* Fondo blanco */
+  padding: 10px 20px; /* Espaciado interno */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para separar del contenido */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.img-home{
+    width: 15px;
+}
+
+.img-engranaje{
+    width: 15px;
+}
+
+.img-modulos{
+    width: 15px;
+}
+
+.link-home{
+    text-align: start;
+    color: black;
+    margin-left: 60%;
+    display: flex;
+}
+
+.link-home:hover{
+    padding-left: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: white;
+    background-color: rgb(0, 71, 103);
+}
+
+.link-administracion{
+    color: black;
+    margin-left: 30px;
+    display: flex;
+}
+
+.link-administracion:hover{
+    padding-left: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: white;
+    background-color: rgb(0, 71, 103);
+}
+
+.link-modulos{
+    margin-left: 30px;
+    color: black;
+    display: flex;
+}
+
+.link-modulos:hover{
+    padding-left: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: white;
+    background-color: rgb(0, 71, 103);
+}
+
+
