@@ -4,8 +4,7 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  overflow-x: hidden;
   font-family: Arial, sans-serif;
   background-color: rgb(220, 234, 245);
   justify-content: center;
@@ -14,6 +13,8 @@ body {
 }
 
 .login-container {
+  width: 100%; /* Esto asegura que el elemento no se desborde horizontalmente */
+  max-width: 100%; /* Limita el tamaño máximo al ancho de la pantalla */
   border-radius: 2.5%;
   text-align: center;
   border: 2px solid #000;
@@ -104,7 +105,7 @@ input::placeholder {
 @media (max-width: 768px) {
   .login-container {
     grid-template-columns: 1fr; /* Cambiar a una sola columna */
-    width: 90%; /* Asegura que el contenedor ocupe el 90% del ancho */
+    width: 100%; /* Asegura que el contenedor ocupe el 90% del ancho */
     height: auto; /* Ajusta la altura para contenido variable */
   }
 
@@ -148,7 +149,7 @@ input::placeholder {
 /* Para pantallas muy pequeñas, como teléfonos en modo retrato */
 @media (max-width: 480px) {
   .login-container {
-    width: 100%; /* Ocupa todo el ancho de la pantalla */ /* Ajusta el padding */
+    width: 90%; /* Ocupa todo el ancho de la pantalla */ /* Ajusta el padding */
   }
 
   .login-container .column {
