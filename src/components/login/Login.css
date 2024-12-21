@@ -149,7 +149,7 @@ input::placeholder {
 /* Para pantallas muy pequeñas, como teléfonos en modo retrato */
 @media (max-width: 480px) {
   .login-container {
-    width: 90%; /* Ocupa todo el ancho de la pantalla */ /* Ajusta el padding */
+    width: 87%; /* Ocupa todo el ancho de la pantalla */ /* Ajusta el padding */
   }
 
   .login-container .column {
