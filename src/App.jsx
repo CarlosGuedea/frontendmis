@@ -11,6 +11,7 @@ function App() {
         {/* Define las rutas */}
         <Route path="/" element={<Login />} />
         <Route path="/adminpanel" element={<Adminpanel />} />
+        
        
       </Routes>
     </Router>

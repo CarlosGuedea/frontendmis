@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios"; // Importamos axios para hacer peticiones HTTP
 import "./Login.css"; // Importamos los estilos
+import Adminpanel from "../adminpanel/adminpanel";
+import { Link } from "react-router-dom";
 
 function Login() {
   // Definir el estado para los campos del formulario y los errores
@@ -42,6 +44,7 @@ function Login() {
   };
 
   return (
+  
     <div className="login-container">
       <div className="column">
         <img src="/icons/MIS_LOGO.png" className="img-logo" width="70%" alt="Logo" />
