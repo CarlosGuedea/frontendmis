@@ -21,7 +21,7 @@ function Login() {
 
     try {
       // Enviar la solicitud al backend con axios
-      const response = await axios.post("http://localhost/api/login.php", {
+      const response = await axios.post("http://localhost/login", {
         username,
         password,
       }, {
