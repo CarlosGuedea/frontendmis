@@ -8,24 +8,39 @@ body{
 }
 
 .titulo-administracion{
-    align-items: flex-start;
-    margin-top: 4rem;
+    text-align:justify;
     display: flex;
 }
 
-.img-administracion{
-  
+.subtitulo-administracion{
+    text-align:justify;
+    display: flex;
 }
 
-.subtitulo-administracion{
-   
-}
 
 .img-tramites{
-    text-align:right;
     width: 40px;
 }
 
+.img-usuarios{
+    width: 40px;
+}
+
+.img-empleados{
+    width: 40px;
+}
+
+.img-micrositios{
+    width: 40px;
+}
+
+.img-oficialia{
+    width: 40px;
+}
+
+.box{
+    width: 300px;
+}
 
   .box-tramites {
     padding: 20px;
@@ -33,33 +48,98 @@ body{
     border: 1px solid #ddd;
     text-align: center;
     text-decoration: none;
-    /* margin-bottom: 20px; */
   }
 
-  .box-tramites a {
-    text-decoration: none;
-    color: black;
-    /* margin-bottom: 20px; */
-  }
-
+ 
   .box-tramites:hover{
-    padding-bottom: 25px;
+    color: black;
+    box-shadow: 9px 10px 9px rgba(0, 0, 0, 0.1);
+  }
+
+  .box-usuarios{
+    padding: 20px;
+    background-color:darkseagreen;
+    border: 1px solid #ddd;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .box-usuarios:hover{
+    color: black;
     padding-left: 25px;
     box-shadow: 9px 10px 9px rgba(0, 0, 0, 0.1);
   }
 
-  .box {
+  
+  .box-empleados{
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color:darkorange;
     border: 1px solid #ddd;
     text-align: center;
-    /* margin-bottom: 20px; */
+    text-decoration: none;
   }
 
-  .section {
-    margin-top: 5rem;
-    /* margin-bottom: 40px; */
+  .box-empleados:hover{
+    color: black;
+    padding-left: 25px;
+    box-shadow: 9px 10px 9px rgba(0, 0, 0, 0.1);
   }
 
+  .box-micrositios{
+    padding: 20px;
+    background-color:deeppink;
+    border: 1px solid #ddd;
+    text-align: center;
+    text-decoration: none;
+  }
 
+  .box-micrositios:hover{
+    color: black;
+    padding-left: 25px;
+    box-shadow: 9px 10px 9px rgba(0, 0, 0, 0.1);
+  }
 
+.box-oficialia{
+    padding: 20px;
+    background-color:darkviolet;
+    border: 1px solid #ddd;
+    text-align: center;
+    text-decoration: none;
+}
+
+.box-oficialia:hover{
+    color: black;
+    padding-left: 25px;
+    box-shadow: 9px 10px 9px rgba(0, 0, 0, 0.1);
+  }
+
+/* ... Estilos existentes ... */
+
+.flex-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centramos los elementos en la fila */
+  }
+  
+  .flex-item {
+    flex: 1;
+    min-width: 200px;
+    max-width: fit-content;
+  }
+
+  
+.title{
+    max-width: 300px; /* Limita el ancho del título */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    }
+
+.fluid-container{
+    gap:2rem;
+}
