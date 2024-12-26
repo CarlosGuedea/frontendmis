@@ -4,9 +4,10 @@ import "./Login.css"; // Importamos los estilos
 import Adminpanel from "../adminpanel/adminpanel";
 import { Link } from "react-router-dom";
 
+
 function Login() {
   // Definir el estado para los campos del formulario y los errores
-  const [username, setUsername] = useState("");
+  const [email, setemail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(""); // Para mostrar errores
   const [isLoading, setIsLoading] = useState(false); // Para mostrar un loading
@@ -21,17 +22,19 @@ function Login() {
 
     try {
       // Enviar la solicitud al backend con axios
-      const response = await axios.post("http://localhost/login", {
-        username,
+      const response = await axios.post("http://localhost:5000/login", {
+        email,
         password,
       }, {
         withCredentials: true, // Enviar las cookies de sesión si las tienes
       });
 
+      console.log(response);
       // Si la respuesta es exitosa, redirigir o realizar alguna acción
       if (response.data.success) {
         // Redirigir a otra página, como el dashboard (se puede usar react-router-dom)
-        window.location.href = "/dashboard"; // Por ejemplo, redirige a /dashboard
+        //window.location.href = "/adminpanel"; // Por ejemplo, redirige a /dashboard
+        console.log(response);
       } else {
         setErrorMessage(response.data.message); // Mostrar el mensaje de error
       }
@@ -41,6 +44,7 @@ function Login() {
     } finally {
       setIsLoading(false); // Dejar de mostrar el loading
     }
+ 
   };
 
   return (
@@ -57,11 +61,11 @@ function Login() {
           <div className="form-group">
             <input
               type="text"
-              id="username"
-              name="username"
+              id="email"
+              name="email"
               placeholder="Ingrese su usuario"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)} // Actualizamos el estado
+              value={email}
+              onChange={(e) => setemail(e.target.value)} // Actualizamos el estado
               required
             />
           </div>
