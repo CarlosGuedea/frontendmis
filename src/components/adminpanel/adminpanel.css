@@ -8,12 +8,17 @@ body{
 }
 
 .titulo-administracion{
+    align-items: flex-start;
     margin-top: 4rem;
     display: flex;
 }
 
+.img-administracion{
+  
+}
+
 .subtitulo-administracion{
-    margin-left: -20rem;
+   
 }
 
 .img-tramites{

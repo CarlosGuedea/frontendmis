@@ -14,13 +14,13 @@ function Adminpanel() {
     <h5>Administración de trámites, requisitios, áreas y puestos</h5>
     </div>
    
-    <div class="container">
+    <div className="container">
 
-  <section class="section">
+  <section className="section">
     <h2>Sección 1</h2>
-    <div class="row">
-      <div class="col-md-3">
-        <div class="box-tramites">
+    <div className="row">
+      <div className="col-md-3">
+        <div className="box-tramites">
           <a href="">
           <img src="icons/tramites.png" alt="tramites" className="img-tramites"/>
           <h4>Trámites</h4>
@@ -28,14 +28,14 @@ function Adminpanel() {
           </a>
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="box">Columna 2</div>
+      <div className="col-md-3">
+        <div className="box">Columna 2</div>
       </div>
-      <div class="col-md-3">
-        <div class="box">Columna 3</div>
+      <div className="col-md-3">
+        <div className="box">Columna 3</div>
       </div>
-      <div class="col-md-3">
-        <div class="box">Columna 4</div>
+      <div className="col-md-3">
+        <div className="box">Columna 4</div>
       </div>
     </div>
   </section>
