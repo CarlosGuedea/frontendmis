@@ -1,6 +1,7 @@
 import React from "react";
 import "./adminpanel.css"; // Importamos los estilos
 import Header from "../header/header";
+import { Link } from 'react-router-dom'; 
 
 function Adminpanel() {
   return (
@@ -14,25 +15,25 @@ function Adminpanel() {
     <h5>Administración de trámites, requisitios, áreas y puestos</h5>
     </div>
    
-    <div className="fluid-container">
+    <div className="container fluid-container">
 
   <section className="section">
 
     <div className="row flex-row">
       <div className="col-md-3 flex-item justify-content-center">
       
-      <a href="">
+      <Link to="/tramites-panel">
         <div className="box box-tramites">
           <img src="icons/tramites.png" alt="tramites" className="img-tramites"/>
           <h4>Trámites</h4>
           <h6 className="title">Administración de trámites, requisitos, áreas y puestos</h6>
         </div>
-        </a>
+      </Link>
 
       </div>
       <div className="col-md-3">
       
-      <a href="">
+      <a href="/tramites-panel">
         <div className="box box-usuarios">
             <img src="icons/usuarios.png" alt="usuarios" className="img-usuarios"/>
             <h4>Panel de Módulos y Usuarios</h4>

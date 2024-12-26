@@ -8,7 +8,8 @@ body{
 }
 
 .titulo-administracion{
-    text-align:justify;
+    margin-top: 2rem;
+    align-items: center;
     display: flex;
 }
 
@@ -140,6 +141,31 @@ a{
     color: black;
     }
 
-.fluid-container{
-    gap:2rem;
+.row{
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+    gap: 20px;
 }
+
+@media (min-width: 768px) {
+  .row {
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    justify-content: space-between; /* Distribuye los elementos con espacio entre ellos */
+  }
+
+  .col-md-3 {
+    flex: 0 0 48%; /* Ocupa el 48% del ancho */
+    max-width: 48%;
+    margin-bottom: 20px; /* Agrega espacio entre las filas */
+  }
+}
+
+
+@media (min-width: 1430px) {
+  .col-md-3 {
+      flex: 0 0 20%; /* Ocupa el 48% del ancho */
+      max-width: 48%;
+      margin-bottom: 20px; /* Agrega espacio entre las filas */
+  }
+}
+

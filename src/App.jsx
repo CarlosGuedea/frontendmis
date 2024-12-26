@@ -6,6 +6,7 @@ import Adminpanel from "./components/adminpanel/adminpanel";
 import UseAuth from "./components/Hooks/useAuth";
 import ProtectedRoute from "./components/Hooks/redirigir";
 import SimpleButtonRequest from "./components/boton/boton";
+import Tramitespanel from "./components/tramitespanel/tramitespanel";
 
 
 function App() {
@@ -18,10 +19,18 @@ function App() {
         <Route path="/admin" element={<Adminpanel />} />
         <Route path="/mostrar-cookie" element={<UseAuth />} />
          <Route
-          path="/dashboard"
+          path="/adminpanel"
           element={
             <ProtectedRoute>
               <Adminpanel />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/tramites-panel"
+          element={
+            <ProtectedRoute>
+              <Tramitespanel />
             </ProtectedRoute>
           }
         />

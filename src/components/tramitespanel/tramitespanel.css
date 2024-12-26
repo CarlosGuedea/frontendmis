@@ -1,0 +1,144 @@
+.img-requisito{
+    width: 40px;
+}
+
+.img-recepcion{
+    width: 40px;
+}
+
+.img-areas{
+    width: 40px;
+}
+
+.img-puestos{
+    width: 40px;
+}
+
+.img-cargos{
+    width: 40px;
+}
+
+.img-validaciones{
+    width: 40px;
+}
+
+.img-centrovalidaciones{
+    width: 40px;
+}
+
+.box-requisitos{
+    padding: 20px;
+    background-color: cornflowerblue;
+}
+
+.box-requisitos:hover{
+    color: black;
+    box-shadow: 9px 10px 9px rgba(0, 0, 0, 0.1);
+}
+
+.box-recepcion{
+    padding: 20px;
+    background-color: darkseagreen;
+}
+
+.box-recepcion:hover{
+    color: black;
+    box-shadow: 9px 10px 9px rgba(0, 0, 0, 0.1);
+}
+
+
+.box-areas{
+    padding: 20px;
+    background-color: darkorange;
+}
+
+.box-areas:hover{
+    color: black;
+    box-shadow: 9px 10px 9px rgba(0, 0, 0, 0.1);
+}
+
+.box-tramites2{
+    padding: 20px;
+    background-color:lightgreen;
+}
+
+.box-tramites2:hover{
+    color: black;
+    box-shadow: 9px 10px 9px rgba(0, 0, 0, 0.1);
+}
+
+.box-puestos{
+    padding: 20px;
+    background-color:deeppink;
+}
+
+.box-puestos:hover{
+    color: black;
+    box-shadow: 9px 10px 9px rgba(0, 0, 0, 0.1);
+}
+
+.box-cargos{
+    padding: 20px;
+    background-color:deeppink;
+}
+
+.box-cargos:hover{
+    color: black;
+    box-shadow: 9px 10px 9px rgba(0, 0, 0, 0.1);
+}
+
+.box-validaciones{
+    padding: 20px;
+    background-color:purple;
+}
+
+.box-validaciones:hover{
+    color: black;
+    box-shadow: 9px 10px 9px rgba(0, 0, 0, 0.1);
+}
+
+.box-centrovalidaciones{
+    padding: 20px;
+    background-color:steelblue;
+}
+
+.box-centrovalidaciones:hover{
+    color: black;
+    box-shadow: 9px 10px 9px rgba(0, 0, 0, 0.1);
+}
+
+.row{
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+    .titulo-administracion {
+        /* Estilos específicos para pantallas anchas */
+        margin-top: 2rem;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .row {
+      flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+      justify-content: space-between; /* Distribuye los elementos con espacio entre ellos */
+    }
+  
+    .col-md-4 {
+      flex: 0 0 48%; /* Ocupa el 48% del ancho */
+      max-width: 48%;
+      margin-bottom: 20px; /* Agrega espacio entre las filas */
+    }
+  }
+
+  @media (min-width: 1430px) {
+    .col-sm-6 {
+        flex: 0 0 20%; /* Ocupa el 48% del ancho */
+        max-width: 48%;
+        margin-bottom: 20px; /* Agrega espacio entre las filas */
+    }
+  }
