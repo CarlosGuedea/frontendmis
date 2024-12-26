@@ -6,6 +6,8 @@ import Adminpanel from "./components/adminpanel/adminpanel";
 import UseAuth from "./components/Hooks/useAuth";
 import ProtectedRoute from "./components/Hooks/redirigir";
 import SimpleButtonRequest from "./components/boton/boton";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 function App() {
 

@@ -40,3 +40,5 @@
 .read-the-docs {
   color: #888;
 }
+
+@import "~foundation-sites/dist/css/foundation.min.css";
