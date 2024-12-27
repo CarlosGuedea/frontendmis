@@ -23,7 +23,7 @@ function Login() {
     try {
       // Enviar la solicitud al backend con axios
       const response = await axios.post(
-        "http://localhost:5000/login",
+        "https://mispythonbackend.azurewebsites.net/login",
         { email, password },
         {
           withCredentials: true, // Enviar las cookies de sesión si las tienes
@@ -36,7 +36,7 @@ function Login() {
       if (response.status === 200) {
         console.log("hola mundo");
         // Redirigir a otra página, como el dashboard
-        navigate("/dashboard"); // Redirige a /dashboard
+        navigate("/adminpanel"); // Redirige a /dashboard
       } else {
         setErrorMessage(response.data.message); // Mostrar el mensaje de error
       }
