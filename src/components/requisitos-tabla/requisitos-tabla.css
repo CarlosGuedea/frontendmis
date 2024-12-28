@@ -1,4 +1,85 @@
-.title-requisitos{
-    text-align: left;
-    margin-top: 2rem;
+body {
+    overflow-x: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.title-requisitos {
+  text-align: left;
+  margin-top: 4rem;
+}
+
+.botones-requisitos {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Asegura que el contenedor de la tabla tenga scroll horizontal */
+.gridjs-container {
+  overflow-x: auto; /* Asegura que haya desplazamiento horizontal */
+  -webkit-overflow-scrolling: touch; /* Mejora el desplazamiento en dispositivos táctiles */
+}
+
+.table-container {
+  width: 100%; /* Asegura que la tabla ocupe el 100% del contenedor */
+  min-width: 350px; /* Establece un ancho mínimo para que el contenido pueda desbordarse */
+}
+
+.gridjs-pagination .gridjs-pages button {
+  color: black;
+  background-color: transparent;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.gridjs-pagination .gridjs-pages button:hover {
+  background-color: #f0f0f0;
+  color: black;
+}
+
+.gridjs-pagination .gridjs-pages .gridjs-current {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+@media (min-width: 380px) {
+    .title-requisitos{
+        margin-top: 4rem;
+        margin-left: 27rem;
+    }
+
+    .table-container{
+        margin-left: 27rem;
+    }
+
+    .gridjs-pages{
+        display: flex;
+    }
+
+}
+
+@media(min-width: 760px){
+    .title-requisitos{
+        margin-top: 4rem;
+        margin-left: 10rem;
+    }
+
+    .table-container{
+        margin-left: 10rem;
+    }
+
+    .gridjs-pages{
+        display: flex;
+    }
+}
+
+@media (min-width: 1200px){
+    .title-requisitos{
+        margin-left: 0;
+    }
+    .table-container{
+        margin-left: 0;
+    }
 }

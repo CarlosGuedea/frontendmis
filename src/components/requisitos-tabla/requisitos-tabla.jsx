@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import $ from "jquery"; // Asegúrate de importar jQuery
-import './requisitos-tabla.css';
-import Header from '../header/header';
+import { Grid, html } from "gridjs";
+import "gridjs/dist/theme/mermaid.css"; // Estilo de Grid.js
+import Header from "../header/header";
 import { decode } from "html-entities";
-import DataTable from "datatables.net-dt"; // Importa la librería de DataTables
-import Responsive from "datatables.net-responsive-dt";
+import "./requisitos-tabla.css";
 
 const RequisitosListar = () => {
   const [requisitos, setRequisitos] = useState([]);
@@ -39,50 +38,74 @@ const RequisitosListar = () => {
         console.error("Error:", error);
         setLoading(false);
       });
-  }, []); // El arreglo vacío asegura que solo se ejecuta una vez al cargar el componente
+  }, []);
 
   useEffect(() => {
-    // Inicializa DataTable solo cuando los datos estén disponibles
     if (requisitos.length > 0) {
-      // Inicializa DataTable en la tabla después de que los datos se hayan cargado
-      $("#requisitos-table").DataTable();
+      // Renderiza Grid.js cuando los datos están disponibles
+      new Grid({
+        columns: [
+          "ID",
+          {
+            name: "Estatus",
+            formatter: (cell) =>
+              html(
+                cell
+                  ? `<span style="color: green; font-weight: bold;">Activo</span>`
+                  : `<span style="color: red; font-weight: bold;">Inactivo</span>`
+              ),
+          },
+          "Código",
+          "Requisito",
+          "Etiqueta",
+          {
+            name: "Acciones",
+            formatter: () =>
+              html(`<div class="botones-requisitos">
+                <button class="btn btn-warning">Editar</button>
+                <button class="btn btn-danger">Eliminar</button>
+                <div/>
+              `),
+          },
+        ],
+        data: requisitos.map((requisito) => [
+          requisito.id,
+          requisito.estatus,
+          requisito.codigo,
+          requisito.requisito,
+          requisito.etiqueta,
+        ]),
+        pagination: true,
+        search: true,
+        sort: true,
+        resizable: true,
+        language: {
+          search: {
+            placeholder: "Buscar...",
+          },
+          pagination: {
+            previous: "Anterior",
+            next: "Siguiente",
+            showing: "Mostrando",
+            results: () => "resultados",
+          },
+        },
+      }).render(document.getElementById("requisitos-grid"));
     }
-  }, [requisitos]); // Ejecuta el efecto cada vez que los requisitos cambien
+  }, [requisitos]);
 
   if (loading) return <p>Cargando...</p>;
 
   return (
     <div>
-      <Header></Header>
+      <Header />
       <div>
         <div className="title-requisitos">
           <h2>Requisitos</h2>
         </div>
-        <table id="requisitos-table" className="table table-hover table-bordered table-striped table-requisitos" border="1">
-          <thead className="thead-light">
-            <tr>
-              <th>ID</th>
-              <th>Estatus</th>
-              <th>Código</th>
-              <th>Requisito</th>
-              <th>Etiqueta</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            {requisitos.map((requisito) => (
-              <tr key={requisito.id}>
-                <td>{requisito.id}</td>
-                <td>{requisito.estatus}</td>
-                <td>{requisito.codigo}</td>
-                <td>{requisito.requisito}</td>
-                <td>{requisito.etiqueta}</td>
-                <td><button></button><button></button></td>
-                
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <div className="table-container">
+          <div id="requisitos-grid" className="overflow-auto"></div>
+        </div>
       </div>
     </div>
   );
