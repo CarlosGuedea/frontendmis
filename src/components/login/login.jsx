@@ -23,7 +23,7 @@ function Login() {
     try {
       // Enviar la solicitud al backend con axios
       const response = await axios.post(
-        "https://mispythonbackend.azurewebsites.net/login",
+        "http://localhost:5000/login",
         { email, password },
         {
           withCredentials: true, // Enviar las cookies de sesión si las tienes

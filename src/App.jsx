@@ -3,10 +3,11 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/login/login"; // Importamos el componente Login
 import Adminpanel from "./components/adminpanel/adminpanel";
-import UseAuth from "./components/Hooks/useAuth";
 import ProtectedRoute from "./components/Hooks/redirigir";
 import SimpleButtonRequest from "./components/boton/boton";
 import Tramitespanel from "./components/tramitespanel/tramitespanel";
+import RequisitosTabla from "./components/requisitos-tabla/requisitos-tabla";
+
 
 
 function App() {
@@ -17,8 +18,8 @@ function App() {
         {/* Define las rutas */}
         <Route path="/" element={<Login />} />
         <Route path="/admin" element={<Adminpanel />} />
-        <Route path="/mostrar-cookie" element={<UseAuth />} />
-         <Route
+        <Route path="/mostrar-cookie" />
+        <Route
           path="/adminpanel"
           element={
             <ProtectedRoute>
@@ -31,6 +32,14 @@ function App() {
           element={
             <ProtectedRoute>
               <Tramitespanel />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/requisitos-tabla"
+          element={
+            <ProtectedRoute>
+              <RequisitosTabla/>
             </ProtectedRoute>
           }
         />

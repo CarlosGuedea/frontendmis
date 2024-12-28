@@ -1,6 +1,7 @@
 import React from "react";
 import "./tramitespanel.css"; // Importamos los estilos
 import Header from "../header/header";
+import {Link} from "react-router-dom";
 
 function Tramitespanel() {
   return (
@@ -23,7 +24,7 @@ function Tramitespanel() {
           {/* Primera fila */}
           <div className="row flex-row">
             <div className="col-sm-6 col-md-4">
-              <a href="">
+              <Link to="/requisitos-tabla">
                 <div className="box box-requisitos">
                   <img
                     src="icons/requisito.png"
@@ -33,7 +34,7 @@ function Tramitespanel() {
                   <h4>Requisito</h4>
                   <h6 className="title">Administración para los requisitos</h6>
                 </div>
-              </a>
+                </Link>
             </div>
 
             <div className="col-sm-6 col-md-4">

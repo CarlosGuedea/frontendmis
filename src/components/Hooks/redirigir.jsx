@@ -8,7 +8,7 @@ const ProtectedRoute = ({ children }) => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const response = await fetch('https://mispythonbackend.azurewebsites.net/protected', {
+        const response = await fetch('http://localhost:5000/protected', {
           method: 'GET',
           credentials: 'include', // Enviar cookies con la solicitud
         });

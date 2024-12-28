@@ -124,17 +124,9 @@ body{
   
   .flex-item {
     flex: 1;
-    min-width: 200px;
+    min-width: 300px;
     max-width: fit-content;
   }
-
-  
-.title{
-    max-width: 300px; /* Limita el ancho del título */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
 
 a{
     text-decoration: none;
@@ -154,11 +146,13 @@ a{
   }
 
   .col-md-3 {
+   
     flex: 0 0 48%; /* Ocupa el 48% del ancho */
     max-width: 48%;
     margin-bottom: 20px; /* Agrega espacio entre las filas */
   }
 }
+
 
 
 @media (min-width: 1430px) {

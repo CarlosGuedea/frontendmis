@@ -26,7 +26,7 @@ function Adminpanel() {
         <div className="box box-tramites">
           <img src="icons/tramites.png" alt="tramites" className="img-tramites"/>
           <h4>Trámites</h4>
-          <h6 className="title">Administración de trámites, requisitos, áreas y puestos</h6>
+          <h6>Administración de trámites, requisitos, áreas y puestos</h6>
         </div>
       </Link>
 
