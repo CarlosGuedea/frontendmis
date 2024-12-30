@@ -7,6 +7,7 @@ import ProtectedRoute from "./components/Hooks/redirigir";
 import SimpleButtonRequest from "./components/boton/boton";
 import Tramitespanel from "./components/tramitespanel/tramitespanel";
 import RequisitosTabla from "./components/requisitos-tabla/requisitos-tabla";
+import EditarRegistroRequisito from "./components/requisitos-tabla/editar-registro-requisitos";
 
 
 
@@ -36,15 +37,24 @@ function App() {
           }
         />
         <Route
-          path="/requisitos-tabla"
+          path="/requisitos"
           element={
             <ProtectedRoute>
               <RequisitosTabla/>
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/requisitos/:id"
+          element={
+            <ProtectedRoute>
+              <EditarRegistroRequisito/>
+            </ProtectedRoute>
+          }
+        />
+
         <Route path="/boton" element={<SimpleButtonRequest />} />
-        
+
       </Routes>
     </Router>
   );

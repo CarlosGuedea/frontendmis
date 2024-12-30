@@ -48,6 +48,7 @@ body {
     .title-requisitos{
         margin-top: 4rem;
         margin-left: 27rem;
+        width: 100%;
     }
 
     .table-container{
@@ -60,19 +61,19 @@ body {
 
 }
 
-@media(min-width: 760px){
-    .title-requisitos{
-        margin-top: 4rem;
-        margin-left: 10rem;
-    }
+@media (min-width: 760px) and (max-width: 1200px) {
+  .title-requisitos {
+      margin-top: 4rem;
+      margin-left: 5rem;
+  }
 
-    .table-container{
-        margin-left: 10rem;
-    }
+  .table-container {
+      margin-left: 5rem;
+  }
 
-    .gridjs-pages{
-        display: flex;
-    }
+  .gridjs-pages {
+      display: flex;
+  }
 }
 
 @media (min-width: 1200px){

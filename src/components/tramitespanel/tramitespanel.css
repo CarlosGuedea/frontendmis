@@ -37,7 +37,7 @@
 }
 
 .box-recepcion{
-    padding: 20px;
+    padding: 15.2px;
     background-color: darkseagreen;
 }
 
@@ -48,7 +48,7 @@
 
 
 .box-areas{
-    padding: 20px;
+    padding: 10px;
     background-color: darkorange;
 }
 
@@ -112,6 +112,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+
+@media (min-width: 380px) {
+    .titulo-administracion {
+        /* Estilos específicos para pantallas anchas */
+        margin-top: 4rem;
+    }
+
 }
 
 @media (min-width: 768px) {

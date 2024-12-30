@@ -58,7 +58,7 @@ body{
   }
 
   .box-usuarios{
-    padding: 20px;
+    padding: 14px;
     background-color:darkseagreen;
     border: 1px solid #ddd;
     text-align: center;
@@ -67,7 +67,6 @@ body{
 
   .box-usuarios:hover{
     color: black;
-    padding-left: 25px;
     box-shadow: 9px 10px 9px rgba(0, 0, 0, 0.1);
   }
 

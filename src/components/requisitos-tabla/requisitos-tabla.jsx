@@ -60,11 +60,16 @@ const RequisitosListar = () => {
           "Etiqueta",
           {
             name: "Acciones",
-            formatter: () =>
-              html(`<div class="botones-requisitos">
-                <button class="btn btn-warning">Editar</button>
-                <button class="btn btn-danger">Eliminar</button>
-                <div/>
+            formatter: (_, row) =>
+              html(`
+                <div class="botones-requisitos">
+                  <a href="/requisitos/${row.cells[0].data}">
+                    <button class="btn btn-warning">Editar</button>
+                  </a>
+                  <a href="/requisitos/${row.cells[0].data}">
+                  <button class="btn btn-danger">Eliminar</button>
+                  </a>
+                </div>
               `),
           },
         ],

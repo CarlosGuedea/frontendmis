@@ -1,0 +1,91 @@
+.container-requisito-edicion{
+    margin-top: -5rem;
+    text-align: left;
+    margin-left: -40rem;
+}
+
+.container-requisito-nombre {
+    display: flex;
+    align-items: center; /* Alinea verticalmente */
+    gap: 1rem; /* Espaciado entre elementos */
+  }
+  
+  .container-requisito-nombre h5 {
+    margin: 0; /* Elimina márgenes adicionales */
+    white-space: nowrap; /* Evita que el texto se divida en líneas */
+  }
+  
+  .container-requisito-nombre input {
+    flex: 1; /* Hace que el input tome el espacio restante si es necesario */
+    height: 2rem;;
+  }
+
+  .container-requisito-codigo {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center; /* Alinea verticalmente */
+    gap: 1rem; /* Espaciado entre elementos */
+  }
+  
+  .container-requisito-codigo h5 {
+    margin: 0; /* Elimina márgenes adicionales */
+    white-space: nowrap; /* Evita que el texto se divida en líneas */
+  }
+  
+  .container-requisito-codigo input {
+    flex: 1; /* Hace que el input tome el espacio restante si es necesario */
+    height: 2rem;;
+  }
+
+  .container-requisito-descripcion {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center; /* Alinea verticalmente */
+    gap: 1rem; /* Espaciado entre elementos */
+  }
+  
+  .container-requisito-descripcion h5 {
+    margin: 0; /* Elimina márgenes adicionales */
+    white-space: nowrap; /* Evita que el texto se divida en líneas */
+  }
+  
+  .container-requisito-descripcion input {
+    flex: 1; /* Hace que el input tome el espacio restante si es necesario */
+    height: 2rem;;
+  }
+  
+
+  .container-seccion-nombre {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center; /* Alinea verticalmente */
+    gap: 1rem; /* Espaciado entre elementos */
+  }
+  
+  .container-seccion-nombre h5 {
+    margin: 0; /* Elimina márgenes adicionales */
+    white-space: nowrap; /* Evita que el texto se divida en líneas */
+  }
+  
+  .container-seccion-nombre input {
+    flex: 1; /* Hace que el input tome el espacio restante si es necesario */
+    height: 2rem;;
+  }
+
+  .container-seccion-valor {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center; /* Alinea verticalmente */
+    gap: 1rem; /* Espaciado entre elementos */
+  }
+  
+  .container-seccion-valor h5 {
+    margin: 0; /* Elimina márgenes adicionales */
+    white-space: nowrap; /* Evita que el texto se divida en líneas */
+  }
+  
+  .container-seccion-valor input {
+    flex: 1; /* Hace que el input tome el espacio restante si es necesario */
+    height: 2rem;;
+  }
+  

@@ -24,7 +24,7 @@ function Tramitespanel() {
           {/* Primera fila */}
           <div className="row flex-row">
             <div className="col-sm-6 col-md-4">
-              <Link to="/requisitos-tabla">
+              <Link to="/requisitos">
                 <div className="box box-requisitos">
                   <img
                     src="icons/requisito.png"
