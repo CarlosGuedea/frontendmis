@@ -108,6 +108,9 @@ const RequisitosListar = () => {
         <div className="title-requisitos">
           <h2>Requisitos</h2>
         </div>
+        <div className="button-nuevo-requisito">
+        <button className="">Nuevo requisito</button>
+        </div>
         <div className="table-container">
           <div id="requisitos-grid" className="overflow-auto"></div>
         </div>

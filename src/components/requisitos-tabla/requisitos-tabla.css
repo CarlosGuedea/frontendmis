@@ -1,5 +1,4 @@
 body {
-    overflow-x: auto;
     margin: 0;
     padding: 0;
 }
@@ -18,11 +17,6 @@ body {
 .gridjs-container {
   overflow-x: auto; /* Asegura que haya desplazamiento horizontal */
   -webkit-overflow-scrolling: touch; /* Mejora el desplazamiento en dispositivos táctiles */
-}
-
-.table-container {
-  width: 100%; /* Asegura que la tabla ocupe el 100% del contenedor */
-  min-width: 350px; /* Establece un ancho mínimo para que el contenido pueda desbordarse */
 }
 
 .gridjs-pagination .gridjs-pages button {
@@ -44,15 +38,13 @@ body {
   border: none;
 }
 
+.button-nuevo-requisito{
+text-align: left;
+}
+
 @media (min-width: 380px) {
     .title-requisitos{
         margin-top: 4rem;
-        margin-left: 27rem;
-        width: 100%;
-    }
-
-    .table-container{
-        margin-left: 27rem;
     }
 
     .gridjs-pages{
@@ -64,11 +56,11 @@ body {
 @media (min-width: 760px) and (max-width: 1200px) {
   .title-requisitos {
       margin-top: 4rem;
-      margin-left: 5rem;
+
   }
 
   .table-container {
-      margin-left: 5rem;
+
   }
 
   .gridjs-pages {

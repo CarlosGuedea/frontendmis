@@ -3,12 +3,10 @@
 }
 
 body{
-
     background-color: white;
 }
 
 .titulo-administracion{
-    margin-top: 2rem;
     align-items: center;
     display: flex;
 }

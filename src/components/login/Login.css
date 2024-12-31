@@ -4,15 +4,15 @@
 }
 
 body {
-  overflow-x: hidden;
   font-family: Arial, sans-serif;
   background-color: rgb(220, 234, 245);
-  justify-content: center;
-  align-items: center;
-  padding: 20px; /* Añadido un pequeño padding para evitar que el contenido toque los bordes */
+  /* Añadido un pequeño padding para evitar que el contenido toque los bordes */
 }
 
 .login-container {
+  padding: 20px; 
+  justify-content: center;
+  align-items: center;
   width: 100%; /* Esto asegura que el elemento no se desborde horizontalmente */
   max-width: 100%; /* Limita el tamaño máximo al ancho de la pantalla */
   border-radius: 2.5%;
@@ -129,10 +129,6 @@ input::placeholder {
   input[type="text"],
   input[type="password"] {
     width: 100%; /* Hace que los inputs ocupen el 100% del contenedor */
-  }
-
-  button {
-    width: 100%; /* Los botones deben ocupar el 100% del contenedor */
   }
 
   .btn-sesion {
