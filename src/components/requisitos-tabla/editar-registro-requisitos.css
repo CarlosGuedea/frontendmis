@@ -1,5 +1,5 @@
 .container-requisito-edicion{
-    text-align: left;
+  text-align: left;
   margin-top: 2rem;
 }
 
@@ -15,7 +15,7 @@
   
   .container-requisito-nombre input {
     flex: 1; /* Hace que el input tome el espacio restante si es necesario */
-    height: 2rem;;
+    height: 2rem;
   }
 
   .container-requisito-codigo {

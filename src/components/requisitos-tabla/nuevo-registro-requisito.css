@@ -1,0 +1,47 @@
+.container-requisito-nombre{
+    display: flex;
+}
+
+.container-requisito-etiqueta{
+    margin-top: 1rem;
+    display: flex;
+    gap:1rem;
+}
+
+.container-requisito-etiqueta h5 {
+    white-space: nowrap; /* Evita que el texto se divida en líneas */
+  }
+  
+  .container-requisito-etiqueta input {
+    flex: 1; /* Hace que el input tome el espacio restante si es necesario */
+    height: 2rem;
+  }
+
+  .container-requisito-codigo{
+    margin-top: 1rem;
+    display: flex;
+}
+
+.container-requisito-codigo h5 {
+    white-space: nowrap; /* Evita que el texto se divida en líneas */
+  }
+  
+  .container-requisito-codigo input {
+    flex: 1; /* Hace que el input tome el espacio restante si es necesario */
+    height: 2rem;
+  }
+
+  .title-seccion{
+    margin-top: 2rem;
+  }
+
+  .container-seccion-descripcion{
+    margin-top: 1rem;
+  }
+
+  .container-seccion-descripcion{
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }

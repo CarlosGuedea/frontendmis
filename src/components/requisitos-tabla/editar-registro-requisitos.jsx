@@ -141,7 +141,7 @@ function EditarRegistroRequisito() {
             />
           </div>
 
-          <div className="container-requisito-codigo">
+          <div className="container-requisito-nombre">
             <h5>Código: </h5>
             <input
               type="text"

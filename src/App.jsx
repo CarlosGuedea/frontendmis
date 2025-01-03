@@ -8,7 +8,7 @@ import SimpleButtonRequest from "./components/boton/boton";
 import Tramitespanel from "./components/tramitespanel/tramitespanel";
 import RequisitosTabla from "./components/requisitos-tabla/requisitos-tabla";
 import EditarRegistroRequisito from "./components/requisitos-tabla/editar-registro-requisitos";
-
+import NuevoRegistroRequisito from "./components/requisitos-tabla/nuevo-registro-requisito";
 
 
 function App() {
@@ -49,6 +49,14 @@ function App() {
           element={
             <ProtectedRoute>
               <EditarRegistroRequisito/>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/requisitos-nuevo"
+          element={
+            <ProtectedRoute>
+              <NuevoRegistroRequisito/>
             </ProtectedRoute>
           }
         />
