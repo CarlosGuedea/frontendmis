@@ -9,8 +9,8 @@ const RequisitosListar = () => {
   const [requisitos, setRequisitos] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // Obtener los requisitos desde el servidor
   useEffect(() => {
-    // Llama al endpoint para obtener los datos
     fetch("http://localhost:5000/requisitos", {
       method: "GET",
       credentials: "include", // Incluye credenciales en la solicitud
@@ -40,10 +40,27 @@ const RequisitosListar = () => {
       });
   }, []);
 
+  // Función para eliminar un requisito usando fetch
+  const eliminarRequisito = (id) => {
+    fetch(`http://localhost:5000/requisitos/${id}`, {
+      method: "DELETE",
+      credentials: "include", // Asegúrate de enviar las credenciales si las necesitas
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then(() => {
+        // Recarga la página después de eliminar el requisito
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.error(`Error al eliminar: ${error.message}`);
+      });
+  };
+
   useEffect(() => {
     if (requisitos.length > 0) {
-      // Renderiza Grid.js cuando los datos están disponibles
-      new Grid({
+      const grid = new Grid({
         columns: [
           "ID",
           {
@@ -66,9 +83,7 @@ const RequisitosListar = () => {
                   <a href="/requisitos/${row.cells[0].data}">
                     <button class="btn btn-warning">Editar</button>
                   </a>
-                  <a href="/requisitos/${row.cells[0].data}">
-                  <button class="btn btn-danger">Eliminar</button>
-                  </a>
+                  <button id="eliminar-${row.cells[0].data}" class="btn btn-danger">Eliminar</button>
                 </div>
               `),
           },
@@ -95,7 +110,18 @@ const RequisitosListar = () => {
             results: () => "resultados",
           },
         },
-      }).render(document.getElementById("requisitos-grid"));
+      });
+
+      // Se asegura de que el evento click sea escuchado correctamente
+      const gridContainer = document.getElementById("requisitos-grid");
+      gridContainer.addEventListener("click", (e) => {
+        if (e.target && e.target.classList.contains("btn-danger")) {
+          const id = e.target.id.replace("eliminar-", "");
+          eliminarRequisito(id);
+        }
+      });
+
+      grid.render(gridContainer);
     }
   }, [requisitos]);
 
@@ -109,7 +135,9 @@ const RequisitosListar = () => {
           <h2>Requisitos</h2>
         </div>
         <div className="button-nuevo-requisito">
-        <a href="/requisitos-nuevo"><button className="">Nuevo requisito</button></a>
+          <a href="/requisitos-nuevo">
+            <button className="">Nuevo requisito</button>
+          </a>
         </div>
         <div className="table-container">
           <div id="requisitos-grid" className="overflow-auto"></div>

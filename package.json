@@ -30,6 +30,7 @@
     "express": "^4.21.2",
     "foundation-sites": "^6.9.0",
     "gridjs": "^6.2.0",
+    "gridjs-react": "^6.1.1",
     "html-entities": "^2.5.2",
     "jquery": "^3.7.1",
     "js-cookie": "^3.0.5",
