@@ -70,15 +70,16 @@ function EditarRegistroRequisito() {
   }, [id]);
 
   const handleSubmitRequisito = (e) => {
+    console.log("Datos enviados para actualizar requisito:", requisito);
     e.preventDefault();
 
-    fetch(`http://localhost:8089/requisitos/${id}`, {
-      method: "PUT",
+    fetch(`http://localhost:8089/requisitos-actualizar/${id}`, {
+      method: "POST",
       credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ requisito }),
+      body: JSON.stringify(requisito),
     })
       .then((response) => {
         if (!response.ok) {
