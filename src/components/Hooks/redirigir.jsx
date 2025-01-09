@@ -8,7 +8,7 @@ const ProtectedRoute = ({ children }) => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const response = await fetch('http://localhost:5000/protected', {
+        const response = await fetch('http://localhost:8089/protected', {
           method: 'GET',
           credentials: 'include', // Enviar cookies con la solicitud
         });

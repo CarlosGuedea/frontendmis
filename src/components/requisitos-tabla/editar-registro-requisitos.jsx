@@ -7,17 +7,31 @@ import { useParams, useNavigate } from "react-router-dom";
 function EditarRegistroRequisito() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [seccion, setSeccion] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+
+  // Inicializa ambos estados para requisito y seccion
   const [requisito, setRequisito] = useState({
-    requisito: "",
-    descripcion: "",
+    id: "",
+    estatus: "",
+    codigo: "",
+    valor: "",
     etiqueta: "",
+    descripcion: "",
   });
 
+  const [seccion, setSeccion] = useState({
+    id_requisito: "",
+    descripcion_requisito: "",
+    id_seccion: "",
+    valor_seccion: "",
+    descripcion_seccion: "",
+  });
+
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
-    fetch(`http://localhost:5000/requisitos/${id}`, {
+    // Llama a la API para obtener los datos
+    fetch(`http://localhost:8089/requisitos/${id}`, {
       method: "GET",
       credentials: "include",
       headers: {
@@ -31,18 +45,18 @@ function EditarRegistroRequisito() {
         return response.json();
       })
       .then((data) => {
+        // Decodifica y asigna los datos al estado
         const requisitoDecodificado = {
           ...data.requisito,
           descripcion: decode(data.requisito.descripcion),
-          requisito: decode(data.requisito.requisito),
-          codigo: decode(data.requisito.codigo),
+          etiqueta: decode(data.requisito.etiqueta),
         };
 
         const seccionDecodificada = {
           ...data.seccion,
           descripcion_requisito: decode(data.seccion.descripcion_requisito),
           descripcion_seccion: decode(data.seccion.descripcion_seccion),
-          valor: decode(data.seccion.valor),
+          valor_seccion: decode(data.seccion.valor_seccion),
         };
 
         setRequisito(requisitoDecodificado);
@@ -55,30 +69,21 @@ function EditarRegistroRequisito() {
       });
   }, [id]);
 
-  const handleSubmit = (e) => {
+  const handleSubmitRequisito = (e) => {
     e.preventDefault();
 
-    const datosFiltrados = {
-      codigo: requisito.codigo,
-      descripcion: requisito.descripcion,
-      requisito: requisito.requisito,
-    };
-
-    fetch(`http://localhost:5000/requisitos/${id}`, {
+    fetch(`http://localhost:8089/requisitos/${id}`, {
       method: "PUT",
       credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(datosFiltrados),
+      body: JSON.stringify({ requisito }),
     })
       .then((response) => {
         if (!response.ok) {
           throw new Error("Error al actualizar el requisito");
         }
-        return response.json();
-      })
-      .then(() => {
         alert("Requisito actualizado exitosamente");
         navigate("/requisitos");
       })
@@ -90,26 +95,18 @@ function EditarRegistroRequisito() {
   const handleSubmitSeccion = (e) => {
     e.preventDefault();
 
-    const datosFiltrados = {
-      valor: seccion.valor,
-      descripcion_seccion: seccion.descripcion_seccion,
-    };
-
-    fetch(`http://localhost:5000/requisitos-seccion/${id}`, {
+    fetch(`http://localhost:8089/requisitos-seccion/${id}`, {
       method: "PUT",
       credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(datosFiltrados),
+      body: JSON.stringify({ seccion }),
     })
       .then((response) => {
         if (!response.ok) {
           throw new Error("Error al actualizar la sección");
         }
-        return response.json();
-      })
-      .then(() => {
         alert("Sección actualizada exitosamente");
       })
       .catch((error) => {
@@ -126,76 +123,52 @@ function EditarRegistroRequisito() {
 
       <div className="container-requisito-edicion">
         <h2>Editar Requisito</h2>
-
-        <h4>Información general</h4>
-        <hr />
-        <form onSubmit={handleSubmit}>
-          <div className="container-requisito-nombre">
-            <h5>Nombre del documento:</h5>
-            <input
-              type="text"
-              value={requisito.requisito || ""}
-              onChange={(e) =>
-                setRequisito({ ...requisito, requisito: e.target.value })
-              }
-            />
-          </div>
-
-          <div className="container-requisito-nombre">
-            <h5>Código: </h5>
-            <input
-              type="text"
-              value={requisito.codigo || ""}
-              onChange={(e) =>
-                setRequisito({ ...requisito, codigo: e.target.value })
-              }
-            />
-          </div>
-
-          <div className="container-requisito-descripcion">
-            <textarea
-              className="form-control"
-              value={requisito.descripcion || ""}
-              onChange={(e) =>
-                setRequisito({ ...requisito, descripcion: e.target.value })
-              }
-            />
-          </div>
-          <div className="espacio-boton">
-            <button type="submit" className="btn btn-primary">
-              Guardar Cambios del Requisito
-            </button>
+        <form onSubmit={handleSubmitRequisito}>
+          <label>Codigo:</label>
+          <input type="text" value={requisito.codigo} />
+          <label>Etiqueta:</label>
+          <input
+            type="text"
+            value={requisito.etiqueta}
+            onChange={(e) =>
+              setRequisito({ ...requisito, etiqueta: e.target.value })
+            }
+          />
+          <label>Descripción:</label>
+          <textarea
+            // Ajusta el número de filas visibles
+            cols="50"
+            value={requisito.descripcion}
+            onChange={(e) =>
+              setRequisito({ ...requisito, descripcion: e.target.value })
+            }
+          />
+          <div>
+            <button type="submit">Guardar Cambios del Requisito</button>
           </div>
         </form>
-        <hr />
 
-        <h4>Sección</h4>
+        <h2>Editar Sección</h2>
         <form onSubmit={handleSubmitSeccion}>
-          <div className="container-seccion-valor">
-            <h5>Valor de la sección:</h5>
-            <input
-              type="text"
-              value={seccion.valor || ""}
-              onChange={(e) =>
-                setSeccion({ ...seccion, valor: e.target.value })
-              }
-            />
-          </div>
-
-          <div className="container-seccion-nombre">
-            <textarea
-              className="form-control"
-              value={seccion.descripcion_seccion || ""}
-              onChange={(e) =>
-                setSeccion({ ...seccion, descripcion_seccion: e.target.value })
-              }
-            />
-          </div>
-
-          <div className="espacio-boton">
-            <button type="submit" className="btn btn-primary">
-              Guardar Cambios de la Sección
-            </button>
+          <label>Valor de Sección:</label>
+          <input
+            type="text"
+            value={seccion.valor_seccion}
+            onChange={(e) =>
+              setSeccion({ ...seccion, valor_seccion: e.target.value })
+            }
+          />
+          <label>Descripción de Sección:</label>
+          <textarea
+ // Ajusta el número de filas visibles
+            cols="50"
+            value={seccion.descripcion_seccion}
+            onChange={(e) =>
+              setSeccion({ ...seccion, descripcion_seccion: e.target.value })
+            }
+          />
+          <div>
+            <button type="submit">Guardar Cambios de la Sección</button>
           </div>
         </form>
       </div>

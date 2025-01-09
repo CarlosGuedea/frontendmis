@@ -11,7 +11,7 @@ const RequisitosListar = () => {
 
   // Obtener los requisitos desde el servidor
   useEffect(() => {
-    fetch("http://localhost:5000/requisitos", {
+    fetch("http://localhost:8089/requisitos", {
       method: "GET",
       credentials: "include", // Incluye credenciales en la solicitud
       headers: {
@@ -92,7 +92,7 @@ const RequisitosListar = () => {
           requisito.id,
           requisito.estatus,
           requisito.codigo,
-          requisito.requisito,
+          requisito.valor,
           requisito.etiqueta,
         ]),
         pagination: true,

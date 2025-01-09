@@ -23,7 +23,7 @@ function Login() {
     try {
       // Enviar la solicitud al backend con axios
       const response = await axios.post(
-        "http://localhost:5000/login",
+        "http://localhost:8089/login",
         { email, password },
         {
           withCredentials: true, // Enviar las cookies de sesión si las tienes
@@ -34,7 +34,7 @@ function Login() {
 
       // Si la respuesta es exitosa, redirigir o realizar alguna acción
       if (response.status === 200) {
-        console.log("hola mundo");
+        
         // Redirigir a otra página, como el dashboard
         navigate("/adminpanel"); // Redirige a /dashboard
       } else {
