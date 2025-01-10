@@ -94,15 +94,16 @@ function EditarRegistroRequisito() {
   };
 
   const handleSubmitSeccion = (e) => {
+    console.log(seccion)
     e.preventDefault();
 
-    fetch(`http://localhost:8089/requisitos-seccion/${id}`, {
-      method: "PUT",
+    fetch(`http://localhost:8089/secciones-actualizar/${id}`, {
+      method: "POST",
       credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ seccion }),
+      body: JSON.stringify(seccion),
     })
       .then((response) => {
         if (!response.ok) {
