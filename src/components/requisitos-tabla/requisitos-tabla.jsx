@@ -42,8 +42,8 @@ const RequisitosListar = () => {
 
   // Función para eliminar un requisito usando fetch
   const eliminarRequisito = (id) => {
-    fetch(`http://localhost:5000/requisitos/${id}`, {
-      method: "DELETE",
+    fetch(`http://localhost:8089/requisitos-delete/${id}`, {
+      method: "POST",
       credentials: "include", // Asegúrate de enviar las credenciales si las necesitas
       headers: {
         "Content-Type": "application/json",
