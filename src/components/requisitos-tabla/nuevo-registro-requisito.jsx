@@ -4,14 +4,14 @@ import React, { useState } from "react";
 
 function NuevoRegistroRequisito() {
   const [requisito, setRequisito] = useState({
-    requisito: "",
+    valor: "",
     descripcion: "",
     etiqueta: "",
     codigo: "",
   });
 
   const [seccion, setSeccion] = useState({
-    nombre: "",
+    valor: "",
     descripcion: "",
   });
 
@@ -20,10 +20,10 @@ function NuevoRegistroRequisito() {
 
     // Validar que los campos requeridos no estén vacíos
     if (
-      !requisito.requisito ||
+      !requisito.valor ||
       !requisito.etiqueta ||
       !requisito.codigo ||
-      !seccion.nombre
+      !seccion.valor
     ) {
       alert("Por favor completa todos los campos obligatorios.");
       return;
@@ -35,8 +35,11 @@ function NuevoRegistroRequisito() {
       seccion,
     };
 
+// Mostrar en consola el JSON que se va a enviar
+console.log("Datos enviados al backend:", JSON.stringify(datosAEnviar));
+
     // Enviar los datos al backend
-    fetch("http://localhost:5000/requisitos-nuevo", {
+    fetch("http://localhost:8089/requisitos-nuevo", {
       method: "POST",
       credentials: "include",
       headers: {
@@ -54,13 +57,13 @@ function NuevoRegistroRequisito() {
         alert("Requisito registrado exitosamente");
         // Reiniciar el formulario
         setRequisito({
-          requisito: "",
+          valor: "",
           descripcion: "",
           etiqueta: "",
           codigo: "",
         });
         setSeccion({
-          nombre: "",
+          valor: "",
           descripcion: "",
         });
       })
@@ -82,9 +85,9 @@ function NuevoRegistroRequisito() {
             <h5>Nombre del documento: </h5>
             <input
               type="text"
-              value={requisito.requisito}
+              value={requisito.valor}
               onChange={(e) =>
-                setRequisito({ ...requisito, requisito: e.target.value })
+                setRequisito({ ...requisito, valor: e.target.value })
               }
               required
             />
@@ -140,9 +143,9 @@ function NuevoRegistroRequisito() {
             <h5>Nombre: </h5>
             <input
               type="text"
-              value={seccion.nombre}
+              value={seccion.valor}
               onChange={(e) =>
-                setSeccion({ ...seccion, nombre: e.target.value })
+                setSeccion({ ...seccion, valor: e.target.value })
               }
               required
             />
